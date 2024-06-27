@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr); /* 16 columns */
+    grid-template-rows: repeat(16, 1fr); /* 16 rows */
+    gap: 1px; /* Gap between grid items */
+    width: 480px; /* Total width of the grid container */
+    height: 480px; /* Total height of the grid container */
+    border: 2px solid #333; /* Border for visualization */
+}
+
+.grid-item {
+    background-color: #fff; /* Initial background color */
+    border: 1px solid #ccc; /* Border for each grid item */
+}
+
+.grid-item:hover {
+    background-color: #000; /* Color change on hover */
+}
+
+
+    
