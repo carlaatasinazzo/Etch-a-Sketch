@@ -16,6 +16,24 @@ function createGrid(size) {
     // Set CSS grid properties dynamically
     container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+
+    // Add event listener to each grid item for hover effect
+    const gridItems = document.querySelectorAll('.grid-item');
+    gridItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+            // Randomize RGB values
+            const red = Math.floor(Math.random() * 256);
+            const green = Math.floor(Math.random() * 256);
+            const blue = Math.floor(Math.random() * 256);
+            const color = `rgb(${red},${green},${blue})`;
+            
+            // Darken the color progressively
+            let opacity = parseFloat(item.style.opacity) || 1;
+            opacity -= 0.1;
+            item.style.backgroundColor = color;
+            item.style.opacity = opacity;
+        });
+    });
 }
 
 // Initial grid creation (16x16)
@@ -39,4 +57,5 @@ function clearAndResizeGrid() {
 // Event listener for the clear button
 const clearButton = document.getElementById('clear-btn');
 clearButton.addEventListener('click', clearAndResizeGrid);
+
 
